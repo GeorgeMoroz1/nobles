@@ -8,10 +8,11 @@ public class Main {
         nobles.add(new Person("Юрий", "Морозов", 32));
         nobles.add(new Person("Шарль Ожье", "де Батс Кастельмор д'Артаньян", 60));
         nobles.add(new Person("Арман Жан", "дю Плесси Ришельё", 57));
-
-        nobles.add(new Person("Михаил", "Голенищев Кутузов", 67));
-        nobles.add(new Person("Остап", "Бендер Задунайский", 30));
-        nobles.add(new Person("Григорий", "Потёмкин Таврический", 52));
+        nobles.add(new Person("Михаил", "Голенищев-Кутузов", 67));
+        nobles.add(new Person("Остап", "Бендер-Задунайский", 30));
+        nobles.add(new Person("Григорий", "Потёмкин-Таврический", 52));
+        nobles.add(new Person("Николай", "Миклухо-Маклай", 41));
+        nobles.add(new Person("Николай", "Римский-Корсаков", 64));
 
         Collections.sort(nobles, new NobleComparator(2));
         System.out.println("Список по уровню знатности:\n" + nobles);
