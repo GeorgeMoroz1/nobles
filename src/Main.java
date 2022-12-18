@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Main {
@@ -14,7 +15,13 @@ public class Main {
         nobles.add(new Person("Николай", "Миклухо-Маклай", 41));
         nobles.add(new Person("Николай", "Римский-Корсаков", 64));
 
-        Collections.sort(nobles, new NobleComparator(2));
+        nobles.sort((o1, o2) -> {
+                    String[] s1 = o1.getSurname().split("\\P{IsAlphabetic}+");
+                    String[] s2 = o2.getSurname().split("\\P{IsAlphabetic}+");
+                    int result = (s1.length >= 2 && s2.length >= 2) ? 0 : Integer.compare(s2.length, s1.length);
+                    return result == 0 ? o1.compareTo(o2) : result;
+                }
+        );
         System.out.println("Список по уровню знатности:\n" + nobles);
     }
 }
